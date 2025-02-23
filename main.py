@@ -59,6 +59,12 @@ if __name__ == '__main__':
     filenames = slice_image(Path(args.source_image_path), 2, 60)
     print("Finished splitting image.")
 
-    print("Copying files to TikTok folder")
-    copy_files(filenames, os.path.dirname(Path(args.source_image_path)), Path("G:\\My Drive\\for tiktok"))
+    # print("Copying files to TikTok folder")
+    # copy_files(filenames, os.path.dirname(Path(args.source_image_path)), Path("G:\\My Drive\\for tiktok"))
+    # print("Files copied.")
+
+    filenames.append(Path(args.source_image_path).name)
+    print(filenames)
+    print("Copying files to iCloud Photos")
+    copy_files(filenames, os.path.dirname(Path(args.source_image_path)), Path("C:\\Users\\vince\\Pictures\\iCloud Photos\\Photos"))
     print("Files copied.")
